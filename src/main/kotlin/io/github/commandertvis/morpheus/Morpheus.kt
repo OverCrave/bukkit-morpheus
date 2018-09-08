@@ -10,27 +10,25 @@ import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.plugin.java.JavaPlugin
 import java.util.logging.Logger
 
+const val PREFIX: String = "[Morpheus]"
+
+var plugin = Morpheus()
+
 class Morpheus : JavaPlugin() {
 
-    companion object {
-        lateinit var plugin: Morpheus
-    }
-
-    var isMorpheusEnabled = true
+    var toggleMorpheus = true
 
     var isSkippingNow = false
 
-    val console: Logger? = Bukkit.getLogger()
+    private val pluginLogger: Logger = Bukkit.getLogger()
 
     private val pluginManager = Bukkit.getPluginManager()
-
-    val pluginPrefix = "[Morpheus]"
 
     var sleepers: Int = 0
 
     lateinit var world: World
 
-    lateinit var pluginConfig: FileConfiguration
+    lateinit var configuration: FileConfiguration
 
     override fun onEnable() {
 
@@ -45,19 +43,19 @@ class Morpheus : JavaPlugin() {
 
         this.pluginManager.registerEvents(MorpheusListener, this)
 
-        this.console?.infoWithPrefix("hello world")
+        this.pluginLogger.infoWithPrefix("hello world")
 
     }
 
     override fun onDisable() {
 
-        this.console?.infoWithPrefix("bye bye world")
+        this.pluginLogger.infoWithPrefix("bye bye world")
 
     }
 
     private fun defaultConfig() {
         this.saveDefaultConfig()
-        this.config
+        this.configuration.addDefault("share-of-players","0.5")
     }
 
 }

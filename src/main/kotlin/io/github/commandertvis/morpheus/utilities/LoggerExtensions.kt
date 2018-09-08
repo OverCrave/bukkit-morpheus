@@ -1,12 +1,13 @@
 package io.github.commandertvis.morpheus.utilities
 
+import io.github.commandertvis.morpheus.PREFIX
 import java.util.logging.Logger
-import io.github.commandertvis.morpheus.Morpheus.Companion.plugin
+import io.github.commandertvis.morpheus.plugin
 
 fun Logger.infoWithPrefix(message: String?) {
-    this.info("${plugin.pluginPrefix} $message")
+    this.info("$PREFIX $message")
 }
 
 fun Logger.warnWithPrefix(message: String?) {
-    this.warning("${plugin.pluginPrefix} $message")
+    this.warning("$PREFIX $message")
 }
