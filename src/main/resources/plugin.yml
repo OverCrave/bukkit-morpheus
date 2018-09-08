@@ -9,18 +9,14 @@ prefix: Morpheus
 commands:
   morpheus:
     description: 'Allows to watch version and command list'
-    permission-message: 'No permission'
-    usage: ':D'
   morpheustoggle:
-      description: ';D'
-      permission-message: 'No permission'
-      usage: ':D'
+    description: 'Allows to disable of enable plugin'
 permission:
   morpheus.command:
     description: 'Allows to watch version and command list'
     default: op
   morpheus.toggle:
-    description: 'Allows to disable of enable plugin'
+    description: 'Allows to disable or enable plugin'
     default: op
   morpheus.*:
     description: 'Full power'

@@ -8,11 +8,10 @@ import org.bukkit.command.CommandSender
 
 object MorpheusCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
-        sender.sendMessage((
-            "&7&lYou're running Morpheus ${plugin.description.version}\n" +
-            "&7Available subcommand:\n" +
-            "&7 - &f/morpheustoggle&7: toggle to skip night voting").colorize()
-        )
+        if(sender.hasPermission("morpheus.command")) {
+            sender.sendMessage(plugin.configuration.getString("morpheus-command-message").replace("\\n","\n").replace("%version%",plugin.description.version).colorize())
+        }
+        else sender.sendMessage(plugin.configuration.getString("no-permission-message").colorize())
         return true
     }
 }

@@ -17,12 +17,12 @@ object MorpheusListener : Listener{
         if(plugin.toggleMorpheus) {
             plugin.sleepers ++
             val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size
-            Bukkit.broadcastMessage("&f${event.player.name}&7 went to bed (${(ratio * 100).toInt()}% sleeping)".colorize())
+            Bukkit.broadcastMessage(plugin.configuration.getString("went-to-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (ratio * 100).toInt().toString()).colorize())
 
             if(ratio >= plugin.configuration.getDouble("share-of-players")) {
                 plugin.world.time = 0
                 plugin.sleepers = 0
-                Bukkit.broadcastMessage("&6Good morning! The night was skipped".colorize())
+                Bukkit.broadcastMessage(plugin.configuration.getString("good-morning-message").colorize())
             }
             plugin.isSkippingNow = true
         }
@@ -37,7 +37,7 @@ object MorpheusListener : Listener{
                 plugin.isSkippingNow = false
             } else {
                 plugin.sleepers --
-                Bukkit.broadcastMessage("&f${event.player.name}&7 left the bed (${(plugin.sleepers / plugin.world.players.size * 100)}% sleeping)".colorize())
+                Bukkit.broadcastMessage(plugin.configuration.getString("left-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (plugin.sleepers.toFloat() / plugin.world.players.size * 100).toInt().toString()).colorize())
             }
         }
 

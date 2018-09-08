@@ -58,7 +58,12 @@ class Morpheus : JavaPlugin() {
     private fun defaultConfig() {
         this.saveDefaultConfig()
         this.configuration = YamlConfiguration.loadConfiguration(File(this.dataFolder, "config.yml"))
-        this.configuration.addDefault("share-of-players","0.5")
+        this.configuration.addDefault("share-of-players", "0.5")
+        this.configuration.addDefault("no-permission-message", "'&4No permission'")
+        this.configuration.addDefault("good-morning-message", "'&6Good morning! The night was skipped'")
+        this.configuration.addDefault("sleep-voting-is", "'&7&lSleep voting is now'")
+        this.configuration.addDefault("activated", "'activated'")
+        this.configuration.addDefault("inactivated", "'inactivated'")
     }
 
 }
