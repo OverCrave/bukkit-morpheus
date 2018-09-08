@@ -36,4 +36,5 @@ messages:
 # Credits to
 * [Commander Tvis](https://github.com/CommanderTvis), 
 * [Mdash](https://github.com/Hulumululululu), 
+* [Morpheus mod](https://github.com/Quetzi/Morpheus), 
 * Bukkit and Spigot teams.
