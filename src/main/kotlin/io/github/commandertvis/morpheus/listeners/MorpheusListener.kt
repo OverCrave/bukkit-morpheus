@@ -1,46 +1,52 @@
 package io.github.commandertvis.morpheus.listeners
 
-import io.github.commandertvis.morpheus.utilities.colorize
+import io.github.commandertvis.morpheus.Configuration
 import io.github.commandertvis.morpheus.plugin
+import io.github.commandertvis.morpheus.utilities.placeholder
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
-import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerBedEnterEvent
 import org.bukkit.event.player.PlayerBedLeaveEvent
 
-object MorpheusListener : Listener{
-
-    @EventHandler(priority = EventPriority.HIGH)
-    fun onPlayerEntersBed(event: PlayerBedEnterEvent) {
-
-        if(plugin.toggleMorpheus) {
-            plugin.sleepers++
-            val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size
-            Bukkit.broadcastMessage(plugin.configuration.getString("went-to-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (ratio * 100).toInt().toString()).colorize())
-
-            if(ratio >= plugin.configuration.getDouble("share-of-players")) {
-                plugin.world.time = 0
-                plugin.sleepers = 0
-                Bukkit.broadcastMessage(plugin.configuration.getString("good-morning-message").colorize())
-            }
-            plugin.isSkippingNow = true
-        }
-
+object MorpheusListener : Listener {
+  @EventHandler
+  fun onPlayerBedEnter(event: PlayerBedEnterEvent) {
+    if (!plugin.toggled) {
+      return
     }
 
-    @EventHandler(priority = EventPriority.HIGHEST)
-    fun onPlayerLeavesBed(event: PlayerBedLeaveEvent) {
+    plugin.sleepers += 1
 
-        if(plugin.toggleMorpheus) {
-            if(plugin.isSkippingNow) {
-                plugin.isSkippingNow = false
-            } else {
-                plugin.sleepers--
-                Bukkit.broadcastMessage(plugin.configuration.getString("left-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (plugin.sleepers.toFloat() / plugin.world.players.size * 100).toInt().toString()).colorize())
-            }
-        }
+    val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size.toFloat()
 
+    Bukkit.broadcastMessage(
+        Configuration.Messages.wentToBed.placeholder("player", event.player.name).placeholder(
+            "sleeping", (ratio * 100).toInt()))
+
+    if (ratio >= Configuration.shareOfPlayers) {
+      plugin.skippingNow = true
+      plugin.world.time = 0
+      plugin.sleepers = 0
+      plugin.skippingNow = false
+      Bukkit.broadcastMessage(Configuration.Messages.goodMorning)
+    }
+  }
+
+  @EventHandler
+  fun onPlayerBedLeave(event: PlayerBedLeaveEvent) {
+    if (!plugin.toggled) {
+      return
     }
 
+    if (plugin.skippingNow) {
+      return
+    }
+
+    plugin.sleepers -= 1
+
+    Bukkit.broadcastMessage(
+        Configuration.Messages.leftBed.placeholder("player", event.player.name).placeholder(
+            "sleeping", (plugin.sleepers.toFloat() / plugin.world.players.size * 100).toInt()))
+  }
 }

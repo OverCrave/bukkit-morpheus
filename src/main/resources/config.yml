@@ -1,9 +1,10 @@
 share-of-players: 0.5
-no-permission-message: '&4No permission'
-morpheus-command-message: '&7&lYou''re running Morpheus %version%\n&7Available subcommand:\n&7 - &f/morpheustoggle&7: toggle to skip night voting'
-good-morning-message: '&6Good morning! The night was skipped'
-went-to-bed-message: '&f%player%&7 went to bed (%sleeping%% sleeping)'
-left-bed-message: '&f${event.player.name}&7 left the bed (${(plugin.sleepers / plugin.world.players.size * 100)}% sleeping)'
-sleep-voting-is: '&7&lSleep voting is now'
-activated: 'activated'
-inactivated: 'inactivated'
+messages:
+  no-permission: "&4No permission"
+  good-morning: "&6Good morning! The night was skipped"
+  went-to-bed: "&f%player%&7 went to bed (%sleeping% sleeping)"
+  left-bed: "&f%player%&7 left the bed (%sleeping% sleeping)"
+  commands:
+    default: "&7&lYou're running Morpheus %version%\n&7Commands:\n&7 - &f/morpheus toggle&7: toggle the plugin"
+    enabled: "&7&lSleep voting is now activated"
+    disabled: "&7&lSleep voting is now inactivated"

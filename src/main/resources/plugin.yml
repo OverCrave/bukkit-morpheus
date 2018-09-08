@@ -2,24 +2,12 @@ name: Morpheus
 description: 'Morpheus allows to skip night when needed percentage of players sleep. Inspired by Forge self-titled mod.'
 version: 0.1
 load: POSTWORLD
-author: CMDR_Tvis
+authors: [CMDR_Tvis, Mdash]
 website: commandertvis.github.io
 main: io.github.commandertvis.morpheus.Morpheus
 prefix: Morpheus
 commands:
   morpheus:
-    description: 'Allows to watch version and command list'
-  morpheustoggle:
-    description: 'Allows to disable of enable plugin'
 permission:
-  morpheus.command:
-    description: 'Allows to watch version and command list'
+  morpheus:
     default: op
-  morpheus.toggle:
-    description: 'Allows to disable or enable plugin'
-    default: op
-  morpheus.*:
-    description: 'Full power'
-    children:
-      morpheus.command: true
-      morpheus.toggle: true
