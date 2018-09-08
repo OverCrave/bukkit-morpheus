@@ -15,7 +15,7 @@ object MorpheusListener : Listener{
     fun onPlayerEntersBed(event: PlayerBedEnterEvent) {
 
         if(plugin.toggleMorpheus) {
-            plugin.sleepers ++
+            plugin.sleepers++
             val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size
             Bukkit.broadcastMessage(plugin.configuration.getString("went-to-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (ratio * 100).toInt().toString()).colorize())
 
@@ -36,7 +36,7 @@ object MorpheusListener : Listener{
             if(plugin.isSkippingNow) {
                 plugin.isSkippingNow = false
             } else {
-                plugin.sleepers --
+                plugin.sleepers--
                 Bukkit.broadcastMessage(plugin.configuration.getString("left-bed-message").replace("%player%", event.player.name).replace("%sleeping%", (plugin.sleepers.toFloat() / plugin.world.players.size * 100).toInt().toString()).colorize())
             }
         }
