@@ -7,12 +7,14 @@ import io.github.commandertvis.morpheus.utilities.infoWithPrefix
 import org.bukkit.Bukkit
 import org.bukkit.World
 import org.bukkit.configuration.file.FileConfiguration
+import org.bukkit.configuration.file.YamlConfiguration
 import org.bukkit.plugin.java.JavaPlugin
+import java.io.File
 import java.util.logging.Logger
 
 const val PREFIX: String = "[Morpheus]"
 
-var plugin = Morpheus()
+internal lateinit var plugin: Morpheus
 
 class Morpheus : JavaPlugin() {
 
@@ -55,6 +57,7 @@ class Morpheus : JavaPlugin() {
 
     private fun defaultConfig() {
         this.saveDefaultConfig()
+        this.configuration = YamlConfiguration.loadConfiguration(File(this.dataFolder, "config.yml"))
         this.configuration.addDefault("share-of-players","0.5")
     }
 
