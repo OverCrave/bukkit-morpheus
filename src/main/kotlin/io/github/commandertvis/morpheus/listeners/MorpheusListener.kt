@@ -28,7 +28,7 @@ object MorpheusListener : Listener {
       plugin.skippingNow = true
       plugin.world.time = 0
       plugin.sleepers = 0
-      plugin.skippingNow = false
+      plugin.skippingNow = true
       Bukkit.broadcastMessage(Configuration.Messages.goodMorning)
     }
   }
