@@ -1,0 +1,9 @@
+$dokka.format:gfm
+$dokka.linkExtension:md
+$dokka.location:io.github.commandertvis.morpheus.utilities$colorize(kotlin.String)io.github.commandertvis.morpheus.utilities/kotlin.-string/colorize.md
+$dokka.location:io.github.commandertvis.morpheus.utilities$placeholder(kotlin.String, kotlin.String, kotlin.Any)io.github.commandertvis.morpheus.utilities/kotlin.-string/placeholder.md
+io.github.commandertvis.morpheus
+io.github.commandertvis.morpheus.commands
+io.github.commandertvis.morpheus.configuration
+io.github.commandertvis.morpheus.listeners
+io.github.commandertvis.morpheus.utilities

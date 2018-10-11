@@ -1,15 +1,18 @@
 buildscript {
   repositories {
     mavenCentral()
+    jcenter()
   }
 
   dependencies {
-    classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+    classpath 'org.jetbrains.dokka:dokka-gradle-plugin:0.9.17'
+    classpath 'com.github.jengelman.gradle.plugins:shadow:4.0.1'
   }
 }
 
 plugins {
-  id 'com.github.johnrengelman.shadow' version '2.0.4'
+  id 'org.jetbrains.dokka' version '0.9.17'
+  id 'com.github.johnrengelman.shadow' version '4.0.1'
   id 'org.jetbrains.kotlin.jvm' version '1.2.61'
 }
 
@@ -18,11 +21,12 @@ version '0.1'
 
 repositories {
   mavenCentral()
+  jcenter()
   maven {
     url 'https://oss.sonatype.org/content/groups/public/'
   }
   maven {
-    url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
   }
 }
 
@@ -44,4 +48,17 @@ artifacts {
 
 shadowJar {
   classifier = null
+}
+
+dokka {
+  outputFormat = 'gfm'
+  sourceDirs = files('src/main/kotlin')
+  moduleName = 'main'
+  noStdlibLink = false
+  outputDirectory = "documentation"
+  reportUndocumented = false
+  skipEmptyPackages = false
+  skipDeprecated = false
+  includeNonPublic = true
+  includes = ['packages.md']
 }

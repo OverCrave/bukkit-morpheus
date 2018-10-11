@@ -1,12 +1,15 @@
 package io.github.commandertvis.morpheus.commands
 
-import io.github.commandertvis.morpheus.Configuration
+import io.github.commandertvis.morpheus.configuration.Configuration
 import io.github.commandertvis.morpheus.plugin
 import io.github.commandertvis.morpheus.utilities.placeholder
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 
+/**
+ * The singleton that stores the executor for the main plugin's command.
+ */
 object MorpheusCommand : CommandExecutor {
   override fun onCommand(
     sender: CommandSender,
@@ -20,8 +23,10 @@ object MorpheusCommand : CommandExecutor {
     }
 
     if (args.isEmpty()) {
-      sender.sendMessage(Configuration.Messages.Commands.default.placeholder("version",
-          plugin.description.version))
+      sender.sendMessage(Configuration.Messages.Commands.default.placeholder(
+          "version",
+          plugin.description.version)
+      )
       return true
     }
 
@@ -30,9 +35,7 @@ object MorpheusCommand : CommandExecutor {
         plugin.toggled = !plugin.toggled
         if (plugin.toggled) {
           sender.sendMessage(Configuration.Messages.Commands.enabled)
-        } else {
-          sender.sendMessage(Configuration.Messages.Commands.disabled)
-        }
+        } else sender.sendMessage(Configuration.Messages.Commands.disabled)
       }
     }
     return true

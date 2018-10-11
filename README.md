@@ -9,8 +9,8 @@
   * `left-bed` &mdash; this message is showed when player leaves bed. 
   * `commands: `
     * `default` &mdash; this message is showed when player runs /morpheus command. 
-    * `enabled` &mdash; this message is showed when player runs /morpheustoggle command and turns sleep voting on. 
-    * `disabled` &mdash; this message is showed when player runs /morpheustoggle command and turns sleep voting off. 
+    * `enabled` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting on. 
+    * `disabled` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting off. 
  Default `config.yml`: 
 ```yaml
 share-of-players: 0.5
