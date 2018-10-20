@@ -18,7 +18,9 @@ import kotlin.math.roundToInt
 object MorpheusListener : Listener {
 
   init {
-    Bukkit.getPluginManager().registerEvents(MorpheusListener, plugin)
+    Bukkit
+        .getPluginManager()
+        .registerEvents(MorpheusListener, plugin)
   }
 
   /**
@@ -38,7 +40,12 @@ object MorpheusListener : Listener {
         Configuration.Messages.wentToBed
             .colorize()
             .placeholder("player", event.player.name)
-            .placeholder("sleeping", (ratio * 100).roundToInt().toString())
+            .placeholder(
+                "sleeping",
+                (ratio * 100)
+                    .roundToInt()
+                    .toString()
+            )
     )
 
     if (ratio >= Configuration.shareOfPlayers) {
@@ -59,7 +66,10 @@ object MorpheusListener : Listener {
     val player = event.player
     if (!plugin.toggled) return
     if (plugin.skippingNow) {
-      player.bedSpawnLocation = player.location
+      if (Configuration.setBedSpawn) {
+        player.bedSpawnLocation = player.location
+        player.sendMessage(Configuration.Messages.setSpawn.colorize())
+      }
       plugin.skippingNow = false
       return
     }
@@ -72,7 +82,9 @@ object MorpheusListener : Listener {
             .placeholder("player", event.player.name)
             .placeholder(
                 "sleeping",
-                (plugin.sleepers.toFloat() / plugin.world.players.size * 100).roundToInt().toString()
+                (plugin.sleepers.toFloat() / plugin.world.players.size * 100)
+                    .roundToInt()
+                    .toString()
             )
     )
 
