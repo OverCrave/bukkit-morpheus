@@ -2,8 +2,10 @@
 
 ## Package io.github.commandertvis.morpheus.command
 
+
+Singletons for handling commands
+
 ### Types
 
-| Name | Summary |
-|---|---|
 | [MorpheusCommand](-morpheus-command/index.md) | `object MorpheusCommand : CommandExecutor`<br>The singleton that stores the executor for the main plugin's command. |
+

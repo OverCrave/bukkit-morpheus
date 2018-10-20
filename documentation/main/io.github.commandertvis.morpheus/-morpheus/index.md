@@ -8,14 +8,10 @@ The main class of the plugin.
 
 ### Constructors
 
-| Name | Summary |
-|---|---|
 | [&lt;init&gt;](-init-.md) | `Morpheus()`<br>The main class of the plugin. |
 
 ### Properties
 
-| Name | Summary |
-|---|---|
 | [skippingNow](skipping-now.md) | `var skippingNow: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>The key that should be active during a skipping right now. |
 | [sleepers](sleepers.md) | `var sleepers: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)<br>Quantity of players that sleep. |
 | [toggled](toggled.md) | `var toggled: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)<br>It stores if the skipping night works. |
@@ -23,8 +19,7 @@ The main class of the plugin.
 
 ### Functions
 
-| Name | Summary |
-|---|---|
 | [onEnable](on-enable.md) | `fun onEnable(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 | [registerCommand](register-command.md) | `fun registerCommand(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
 | [registerListener](register-listener.md) | `fun registerListener(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html) |
+

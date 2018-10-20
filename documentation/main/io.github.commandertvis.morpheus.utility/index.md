@@ -8,6 +8,5 @@ Utility top-level functions and singletons.
 
 ### Extensions for External Classes
 
-| Name | Summary |
-|---|---|
 | [kotlin.String](kotlin.-string/index.md) |  |
+

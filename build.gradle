@@ -49,7 +49,7 @@ shadowJar {
 }
 
 dokka {
-  outputFormat = "gfm"
+  outputFormat = "markdown"
   sourceDirs = files("src/main/kotlin")
   moduleName = "main"
   noStdlibLink = false

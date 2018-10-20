@@ -14,6 +14,6 @@ Singletons for handling events
 
 Utility top-level functions and singletons. 
 
-# Package io.github.commandertvis.command
+# Package io.github.commandertvis.morpheus.command
 
 Singletons for handling commands
