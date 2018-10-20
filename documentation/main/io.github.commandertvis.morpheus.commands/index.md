@@ -1,6 +1,6 @@
-[main](../index.md) / [io.github.commandertvis.morpheus.commands](./index.md)
+[main](../index.md) / [io.github.commandertvis.morpheus.command](./index.md)
 
-## Package io.github.commandertvis.morpheus.commands
+## Package io.github.commandertvis.morpheus.command
 
 ### Types
 

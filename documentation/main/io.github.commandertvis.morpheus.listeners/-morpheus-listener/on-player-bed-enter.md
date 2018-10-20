@@ -1,4 +1,4 @@
-[main](../../index.md) / [io.github.commandertvis.morpheus.listeners](../index.md) / [MorpheusListener](index.md) / [onPlayerBedEnter](./on-player-bed-enter.md)
+[main](../../index.md) / [io.github.commandertvis.morpheus.listener](../index.md) / [MorpheusListener](index.md) / [onPlayerBedEnter](./on-player-bed-enter.md)
 
 # onPlayerBedEnter
 

@@ -5,10 +5,10 @@
 | Name | Summary |
 |---|---|
 | [io.github.commandertvis.morpheus](io.github.commandertvis.morpheus/index.md) |  |
-| [io.github.commandertvis.morpheus.commands](io.github.commandertvis.morpheus.commands/index.md) |  |
+| [io.github.commandertvis.morpheus.command](io.github.commandertvis.morpheus.command/index.md) |  |
 | [io.github.commandertvis.morpheus.configuration](io.github.commandertvis.morpheus.configuration/index.md) |  |
-| [io.github.commandertvis.morpheus.listeners](io.github.commandertvis.morpheus.listeners/index.md) |  |
-| [io.github.commandertvis.morpheus.utilities](io.github.commandertvis.morpheus.utilities/index.md) |  |
+| [io.github.commandertvis.morpheus.listener](io.github.commandertvis.morpheus.listener/index.md) |  |
+| [io.github.commandertvis.morpheus.utility](io.github.commandertvis.morpheus.utility/index.md) |  |
 
 ### Index
 

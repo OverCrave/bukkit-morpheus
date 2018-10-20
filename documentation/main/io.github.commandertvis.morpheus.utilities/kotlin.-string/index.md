@@ -1,4 +1,4 @@
-[main](../../index.md) / [io.github.commandertvis.morpheus.utilities](../index.md) / [kotlin.String](./index.md)
+[main](../../index.md) / [io.github.commandertvis.morpheus.utility](../index.md) / [kotlin.String](./index.md)
 
 ### Extensions for kotlin.String
 

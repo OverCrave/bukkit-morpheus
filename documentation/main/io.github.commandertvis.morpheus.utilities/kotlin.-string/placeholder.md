@@ -1,4 +1,4 @@
-[main](../../index.md) / [io.github.commandertvis.morpheus.utilities](../index.md) / [kotlin.String](index.md) / [placeholder](./placeholder.md)
+[main](../../index.md) / [io.github.commandertvis.morpheus.utility](../index.md) / [kotlin.String](index.md) / [placeholder](./placeholder.md)
 
 # placeholder
 

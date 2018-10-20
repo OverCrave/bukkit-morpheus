@@ -1,4 +1,4 @@
-[main](../../index.md) / [io.github.commandertvis.morpheus.commands](../index.md) / [MorpheusCommand](index.md) / [onCommand](./on-command.md)
+[main](../../index.md) / [io.github.commandertvis.morpheus.command](../index.md) / [MorpheusCommand](index.md) / [onCommand](./on-command.md)
 
 # onCommand
 

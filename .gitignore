@@ -1,5 +1,7 @@
-.idea/
-out/
-.gradle/
-gradle/
+
 /build/
+/.gradle/
+/.idea/
+/gradle/
+/gradlew
+/gradlew.bat

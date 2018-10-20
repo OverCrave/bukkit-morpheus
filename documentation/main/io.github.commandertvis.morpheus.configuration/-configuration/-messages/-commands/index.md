@@ -10,6 +10,6 @@ Commands section.
 
 | Name | Summary |
 |---|---|
-| [default](default.md) | `lateinit var default: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [disabled](disabled.md) | `lateinit var disabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [enabled](enabled.md) | `lateinit var enabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [default](default.md) | `var default: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [disabled](disabled.md) | `var disabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [enabled](enabled.md) | `var enabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

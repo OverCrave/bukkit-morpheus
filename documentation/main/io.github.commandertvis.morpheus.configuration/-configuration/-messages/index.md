@@ -16,7 +16,7 @@ Messages section.
 
 | Name | Summary |
 |---|---|
-| [goodMorning](good-morning.md) | `lateinit var goodMorning: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [leftBed](left-bed.md) | `lateinit var leftBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [noPermission](no-permission.md) | `lateinit var noPermission: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
-| [wentToBed](went-to-bed.md) | `lateinit var wentToBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [goodMorning](good-morning.md) | `var goodMorning: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [leftBed](left-bed.md) | `var leftBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [noPermission](no-permission.md) | `var noPermission: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |
+| [wentToBed](went-to-bed.md) | `var wentToBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html) |

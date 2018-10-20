@@ -4,8 +4,8 @@
 
 `lateinit var world: World`
 
-The main world.
+The world.
 
 ### Property
 
-`world` - The main world.
+`world` - The world.

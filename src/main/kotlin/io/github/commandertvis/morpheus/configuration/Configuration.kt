@@ -1,14 +1,11 @@
 package io.github.commandertvis.morpheus.configuration
 
-import io.github.commandertvis.morpheus.plugin
-import io.github.commandertvis.morpheus.utilities.colorize
-
 /**
  * The configuration object.
  * @property shareOfPlayers Share of players in bed.
  */
 object Configuration {
-  var shareOfPlayers: Float = 0.0f
+  var shareOfPlayers by Property<Float> { "share-of-players" }
 
   /**
    * Messages section.
@@ -18,10 +15,10 @@ object Configuration {
    * @property leftBed This message is showed when player leaves bed.
    */
   object Messages {
-    lateinit var noPermission: String
-    lateinit var goodMorning: String
-    lateinit var wentToBed: String
-    lateinit var leftBed: String
+    var noPermission by Property<String> { "messages.no-permission" }
+    var goodMorning by Property<String> { "messages.good-morning" }
+    var wentToBed by Property<String> { "messages.went-to-bed" }
+    var leftBed by Property<String> { "messages.left-bed" }
 
     /**
      * Commands section.
@@ -30,31 +27,9 @@ object Configuration {
      * @property disabled This message is showed when player runs /morpheus toggle command and turns sleep voting off.
      */
     object Commands {
-      lateinit var default: String
-      lateinit var enabled: String
-      lateinit var disabled: String
-    }
-  }
-
-  /**
-   * The method to load the configuration fields.
-   */
-  fun load() {
-    with(plugin.configuration) {
-      shareOfPlayers = getInt("share-of-players").toFloat() / 100f
-
-      with(getConfigurationSection("messages")) {
-        Messages.noPermission = getString("no-permission").colorize()
-        Messages.goodMorning = getString("good-morning").colorize()
-        Messages.wentToBed = getString("went-to-bed").colorize()
-        Messages.leftBed = getString("left-bed").colorize()
-
-        with(getConfigurationSection("commands")) {
-          Messages.Commands.default = getString("default").colorize()
-          Messages.Commands.enabled = getString("enabled").colorize()
-          Messages.Commands.disabled = getString("disabled").colorize()
-        }
-      }
+      var default by Property<String> { "messages.commands.default" }
+      var enabled by Property<String> { "messages.commands.enabled" }
+      var disabled by Property<String> { "messages.commands.disabled" }
     }
   }
 }

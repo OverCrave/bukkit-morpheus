@@ -2,4 +2,4 @@
 
 # leftBed
 
-`lateinit var leftBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+`var leftBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

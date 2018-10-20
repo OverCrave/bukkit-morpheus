@@ -2,4 +2,4 @@
 
 # goodMorning
 
-`lateinit var goodMorning: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+`var goodMorning: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

@@ -1,6 +1,6 @@
-[main](../index.md) / [io.github.commandertvis.morpheus.utilities](./index.md)
+[main](../index.md) / [io.github.commandertvis.morpheus.utility](./index.md)
 
-## Package io.github.commandertvis.morpheus.utilities
+## Package io.github.commandertvis.morpheus.utility
 
 ### Extensions for External Classes
 

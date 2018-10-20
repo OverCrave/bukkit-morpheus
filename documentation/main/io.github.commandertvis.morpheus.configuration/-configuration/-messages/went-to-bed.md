@@ -2,4 +2,4 @@
 
 # wentToBed
 
-`lateinit var wentToBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+`var wentToBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

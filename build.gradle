@@ -1,6 +1,5 @@
 buildscript {
   repositories {
-    mavenCentral()
     jcenter()
   }
 
@@ -20,7 +19,6 @@ group 'io.github.commandertvis.morpheus'
 version '0.1'
 
 repositories {
-  mavenCentral()
   jcenter()
   maven {
     url 'https://oss.sonatype.org/content/groups/public/'
@@ -51,14 +49,13 @@ shadowJar {
 }
 
 dokka {
-  outputFormat = 'gfm'
-  sourceDirs = files('src/main/kotlin')
-  moduleName = 'main'
+  outputFormat = "gfm"
+  sourceDirs = files("src/main/kotlin")
+  moduleName = "main"
   noStdlibLink = false
   outputDirectory = "documentation"
   reportUndocumented = false
-  skipEmptyPackages = false
+  skipEmptyPackages = true
   skipDeprecated = false
   includeNonPublic = true
-  includes = ['packages.md']
 }

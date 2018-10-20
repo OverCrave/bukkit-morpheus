@@ -2,4 +2,4 @@
 
 # enabled
 
-`lateinit var enabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+`var enabled: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)

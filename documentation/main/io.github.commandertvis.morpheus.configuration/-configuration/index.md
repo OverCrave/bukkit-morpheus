@@ -17,9 +17,3 @@ The configuration object.
 | Name | Summary |
 |---|---|
 | [shareOfPlayers](share-of-players.md) | `var shareOfPlayers: `[`Float`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-float/index.html) |
-
-### Functions
-
-| Name | Summary |
-|---|---|
-| [load](load.md) | `fun load(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)<br>The method to load the configuration fields. |
