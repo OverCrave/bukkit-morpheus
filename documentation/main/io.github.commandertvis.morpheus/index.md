@@ -2,6 +2,9 @@
 
 ## Package io.github.commandertvis.morpheus
 
+
+General classes
+
 ### Types
 
 | Name | Summary |

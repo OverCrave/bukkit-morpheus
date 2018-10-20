@@ -2,6 +2,9 @@
 
 ## Package io.github.commandertvis.morpheus.configuration
 
+
+Classes for interacting with the configuration
+
 ### Types
 
 | Name | Summary |
