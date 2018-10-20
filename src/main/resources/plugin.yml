@@ -1,6 +1,6 @@
 name: Morpheus
 description: 'Morpheus allows to skip night when needed percentage of players sleep. Inspired by Forge self-titled mod.'
-version: 0.1
+version: 0.2
 load: POSTWORLD
 authors: [CMDR_Tvis, Mdash]
 website: commandertvis.github.io
