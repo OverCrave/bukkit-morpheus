@@ -46,6 +46,12 @@ object MorpheusCommand : CommandExecutor {
           sender.sendMessage(Configuration.Messages.Commands.enabled.colorize())
         } else sender.sendMessage(Configuration.Messages.Commands.disabled.colorize())
       }
+      else -> {
+        sender.sendMessage(Configuration.Messages.Commands.default
+            .colorize()
+            .placeholder("version", plugin.description.version)
+        )
+      }
     }
     return true
   }
