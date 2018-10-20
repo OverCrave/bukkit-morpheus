@@ -4,5 +4,5 @@
 
 `Morpheus()`
 
-The main class of the plugin.
+The main class of the plugin
 

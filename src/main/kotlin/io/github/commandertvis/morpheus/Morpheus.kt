@@ -7,37 +7,50 @@ import org.bukkit.World
 import org.bukkit.plugin.java.JavaPlugin
 
 /**
- * The internal instance of the plugin.
+ * The internal instance of the plugin
  */
 internal lateinit var plugin: Morpheus
 
 /**
- * The main class of the plugin.
- * @property toggled It stores if the skipping night works.
- * @property skippingNow The key that should be active during a skipping right now.
- * @property sleepers Quantity of players that sleep.
- * @property world The world.
+ * The main class of the plugin
  */
 class Morpheus : JavaPlugin() {
 
+  /**
+   * It stores if the skipping night works
+   */
   var toggled: Boolean = true
+  /**
+   * The key that should be active during a skipping right now
+   */
   var skippingNow: Boolean = false
+  /**
+   * The quantity of players that sleep
+   */
   var sleepers: Int = 0
+  /**
+   * The overworld
+   */
   lateinit var world: World
 
   override fun onEnable() {
     plugin = this
+    world = Bukkit.getWorlds()[0]
     saveDefaultConfig()
-
-    world = Bukkit.getWorld("world")
     registerCommand()
     registerListener()
   }
 
+  /**
+   * The method to register plugin's command
+   */
   private fun registerCommand() {
     MorpheusCommand
   }
 
+  /**
+   * The method to register plugin's listener
+   */
   private fun registerListener() {
     MorpheusListener
   }

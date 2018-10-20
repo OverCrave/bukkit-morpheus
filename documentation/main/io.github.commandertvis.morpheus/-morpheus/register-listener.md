@@ -3,3 +3,6 @@
 # registerListener
 
 `private fun registerListener(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+
+The method to register plugin's listener
+

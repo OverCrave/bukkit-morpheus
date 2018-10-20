@@ -1,5 +1,7 @@
+set-bed-spawn: true
 share-of-players: 0.5
 messages:
+  set-spawn: "&7&lBed spawn set"
   no-permission: "&4No permission"
   good-morning: "&6Good morning! The night was skipped"
   went-to-bed: "&f%player%&7 went to bed (%sleeping%% sleeping)"

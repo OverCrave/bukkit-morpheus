@@ -7,5 +7,5 @@ Singletons for handling events
 
 ### Types
 
-| [MorpheusListener](-morpheus-listener/index.md) | `object MorpheusListener : Listener`<br>The common event listener of the plugin. |
+| [MorpheusListener](-morpheus-listener/index.md) | `object MorpheusListener : Listener`<br>The common event listener of the plugin |
 

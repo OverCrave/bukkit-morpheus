@@ -4,5 +4,5 @@
 
 `internal lateinit var plugin: `[`Morpheus`](-morpheus/index.md)
 
-The internal instance of the plugin.
+The internal instance of the plugin
 

@@ -4,14 +4,14 @@
 
 `fun `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`.placeholder(key: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`, value: `[`Any`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html)`): `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
 
-Function to replace %placeholders% with values.
+Function to replace %placeholders% with values
 
 ### Parameters
 
-`key` - key of the placeholder.
+`key` - key of the placeholder
 
-`value` - value to replace with.
+`value` - value to replace with
 
 **Return**
-string where all the placeholders with the values.
+string where all the placeholders with the values
 

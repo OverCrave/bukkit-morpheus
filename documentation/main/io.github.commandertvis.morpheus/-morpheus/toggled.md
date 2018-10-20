@@ -4,8 +4,5 @@
 
 `var toggled: `[`Boolean`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html)
 
-It stores if the skipping night works.
+It stores if the skipping night works
 
-### Property
-
-`toggled` - It stores if the skipping night works.

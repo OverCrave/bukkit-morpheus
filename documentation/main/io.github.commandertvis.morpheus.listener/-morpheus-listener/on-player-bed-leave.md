@@ -4,8 +4,8 @@
 
 `fun onPlayerBedLeave(event: PlayerBedLeaveEvent): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
 
-The handler not to skip night when players leave bed.
+The handler not to skip night when players leave bed
 
 ### Parameters
 
-`event` - an event object.
+`event` - an event object

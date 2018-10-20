@@ -4,5 +4,5 @@
 
 `Property(name: () -> `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)`)`
 
-Delegates config.yml entries.
+Delegates config.yml entries
 

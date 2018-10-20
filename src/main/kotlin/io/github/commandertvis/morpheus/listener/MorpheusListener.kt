@@ -6,28 +6,26 @@ import io.github.commandertvis.morpheus.utility.colorize
 import io.github.commandertvis.morpheus.utility.placeholder
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
+import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerBedEnterEvent
 import org.bukkit.event.player.PlayerBedLeaveEvent
 import kotlin.math.roundToInt
 
 /**
- * The common event listener of the plugin.
+ * The common event listener of the plugin
  */
 object MorpheusListener : Listener {
 
-  /**
-   * To register this listener.
-   */
   init {
     Bukkit.getPluginManager().registerEvents(MorpheusListener, plugin)
   }
 
   /**
-   * The handler to skip night when the enough of players are in bed.
-   * @param event event object.
+   * The handler to skip night when the enough of players are in bed
+   * @param event event object
    */
-  @EventHandler
+  @EventHandler(priority = EventPriority.HIGHEST)
   fun onPlayerBedEnter(event: PlayerBedEnterEvent) {
 
     if (!plugin.toggled) return
@@ -52,14 +50,16 @@ object MorpheusListener : Listener {
   }
 
   /**
-   * The handler not to skip night when players leave bed.
-   * @param event an event object.
+   * The handler not to skip night when players leave bed
+   * @param event an event object
    */
-  @EventHandler
+  @EventHandler(priority = EventPriority.HIGHEST)
   fun onPlayerBedLeave(event: PlayerBedLeaveEvent) {
 
+    val player = event.player
     if (!plugin.toggled) return
     if (plugin.skippingNow) {
+      player.bedSpawnLocation = player.location
       plugin.skippingNow = false
       return
     }
@@ -69,9 +69,9 @@ object MorpheusListener : Listener {
     Bukkit.broadcastMessage(
         Configuration.Messages.leftBed
             .colorize()
-            .replace("%player%", event.player.name)
-            .replace(
-                "%sleeping%",
+            .placeholder("player", event.player.name)
+            .placeholder(
+                "sleeping",
                 (plugin.sleepers.toFloat() / plugin.world.players.size * 100).roundToInt().toString()
             )
     )

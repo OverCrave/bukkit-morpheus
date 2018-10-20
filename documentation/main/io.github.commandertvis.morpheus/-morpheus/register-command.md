@@ -3,3 +3,6 @@
 # registerCommand
 
 `private fun registerCommand(): `[`Unit`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html)
+
+The method to register plugin's command
+

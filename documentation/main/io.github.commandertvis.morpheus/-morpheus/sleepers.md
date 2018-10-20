@@ -4,8 +4,5 @@
 
 `var sleepers: `[`Int`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html)
 
-Quantity of players that sleep.
+The quantity of players that sleep
 
-### Property
-
-`sleepers` - Quantity of players that sleep.

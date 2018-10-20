@@ -3,3 +3,14 @@
 # leftBed
 
 `var leftBed: `[`String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+This message is showed when player leaves bed
+
+**Getter**
+
+This message is showed when player leaves bed
+
+**Setter**
+
+This message is showed when player leaves bed
+
