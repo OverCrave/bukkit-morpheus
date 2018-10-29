@@ -32,6 +32,7 @@ object MorpheusListener : Listener {
 
     if (!plugin.toggled) return
 
+    plugin.skippingNow = false
     plugin.sleepers++
 
     val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size.toFloat()
@@ -50,7 +51,17 @@ object MorpheusListener : Listener {
 
     if (ratio >= Configuration.shareOfPlayers) {
       plugin.skippingNow = true
-      plugin.world.time = 0
+
+      while (true) {
+        if (plugin.world.time <= 24000) {
+          plugin.world.time += 10
+          Thread.sleep(3)
+        } else {
+          plugin.world.time = 0
+          break
+        }
+      }
+
       plugin.sleepers = 0
       Bukkit.broadcastMessage(Configuration.Messages.goodMorning.colorize())
     }
@@ -70,7 +81,6 @@ object MorpheusListener : Listener {
         player.bedSpawnLocation = player.location
         player.sendMessage(Configuration.Messages.setSpawn.colorize())
       }
-      plugin.skippingNow = false
       return
     }
 

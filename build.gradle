@@ -16,7 +16,7 @@ plugins {
 }
 
 group 'io.github.commandertvis.morpheus'
-version '0.3'
+version '0.4'
 
 repositories {
   jcenter()
@@ -49,11 +49,11 @@ shadowJar {
 }
 
 dokka {
-  outputFormat = "markdown"
+  outputFormat = "html"
   sourceDirs = files("src/main/kotlin")
   moduleName = "main"
   noStdlibLink = false
-  outputDirectory = "documentation"
+  outputDirectory = "docs"
   reportUndocumented = false
   skipEmptyPackages = true
   skipDeprecated = false
