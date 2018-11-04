@@ -35,11 +35,12 @@ messages:
   not-enough-args: "&4Not enough arguments"
 ```
 
-# Permissions
+# Permissions: 
 
-* `morpheus.control`  &mdash; players having this permission can temporary turn off the plugin in an emergency situation. 
+* `morpheus.control`  &mdash; players having this permission can temporary turn off the plugin in an emergency situation, 
+* `morpheus.*` &mdash; the shorter way to write `morpheus.control`. 
 
-# Credits to
+# Credits to: 
 
 * [Commander Tvis](https://github.com/CommanderTvis), 
 * [Mdashl](https://github.com/Mdashl), 
