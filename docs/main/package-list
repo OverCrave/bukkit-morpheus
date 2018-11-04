@@ -1,0 +1,11 @@
+$dokka.format:html
+$dokka.linkExtension:html
+$dokka.location:io.github.commandertvis.morpheus.utility$color(kotlin.String)io.github.commandertvis.morpheus.utility/kotlin.-string/color.html
+$dokka.location:io.github.commandertvis.morpheus.utility$hasEnoughArgs(kotlin.Array((kotlin.String)), kotlin.Int, org.bukkit.command.CommandSender)io.github.commandertvis.morpheus.utility/kotlin.-array/has-enough-args.html
+$dokka.location:io.github.commandertvis.morpheus.utility$placeholder(kotlin.String, kotlin.String, kotlin.Any)io.github.commandertvis.morpheus.utility/kotlin.-string/placeholder.html
+$dokka.location:io.github.commandertvis.morpheus.utility$sendFormatMessage(org.bukkit.command.CommandSender, kotlin.String)io.github.commandertvis.morpheus.utility/org.bukkit.command.-command-sender/send-format-message.html
+io.github.commandertvis.morpheus
+io.github.commandertvis.morpheus.command
+io.github.commandertvis.morpheus.configuration
+io.github.commandertvis.morpheus.listener
+io.github.commandertvis.morpheus.utility
