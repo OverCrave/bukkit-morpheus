@@ -46,3 +46,7 @@ messages:
 * [Mdashl](https://github.com/Mdashl), 
 * [Morpheus mod](https://github.com/Quetzi/Morpheus), 
 * Bukkit and Spigot teams.
+
+# Documentation
+
+You can find documentation for all the classes of the plugin [here](https://commandertvis.github.io/bukkit-morpheus/main/index.html). 
