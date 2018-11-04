@@ -1,12 +1,12 @@
 set-bed-spawn: true
 share-of-players: 0.5
 messages:
-  set-spawn: "&7&lBed spawn set"
+  set-spawn: "&aBed spawn set"
   no-permission: "&4No permission"
   good-morning: "&6Good morning! The night was skipped"
   went-to-bed: "&f%player%&7 went to bed (%sleeping%% sleeping)"
   left-bed: "&f%player%&7 left the bed (%sleeping%% sleeping)"
-  commands:
-    default: "&7&lYou're running Morpheus %version%\n&7Commands:\n&7 — &f/morpheus toggle&7: toggle the plugin"
-    enabled: "&7&lSleep voting is now activated"
-    disabled: "&7&lSleep voting is now inactivated"
+  default: "&7You're running Morpheus %version%\n&7Commands:\n&7 — &f/morpheus toggle&7: toggle the plugin"
+  enabled: "&aSleep voting is now activated"
+  disabled: "&7Sleep voting is now inactivated"
+  not-enough-args: "&4Not enough arguments"

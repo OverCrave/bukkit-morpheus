@@ -12,5 +12,10 @@ commands:
     description: '/morpheus toggle — toggle the plugin'
     permission: morpheus
 permission:
-  morpheus:
+  morpheus.control:
     default: op
+  morpheus.*:
+    default: op
+    children:
+      morpheus.control: true
+api-version: 1.13

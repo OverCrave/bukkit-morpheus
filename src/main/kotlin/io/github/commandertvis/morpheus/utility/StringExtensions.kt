@@ -6,7 +6,7 @@ import org.bukkit.ChatColor
  * Function for formatting messages by Bukkit color codes
  * @return string where & color codes are replaced with \u00A7 color codes
  */
-fun String.colorize(): String = ChatColor.translateAlternateColorCodes('&', this)
+fun String.color(): String = ChatColor.translateAlternateColorCodes('&', this)
 
 /**
  * Function to replace %placeholders% with values

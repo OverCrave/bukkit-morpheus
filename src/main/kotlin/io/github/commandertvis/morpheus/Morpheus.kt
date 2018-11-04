@@ -1,7 +1,7 @@
 package io.github.commandertvis.morpheus
 
 import io.github.commandertvis.morpheus.command.MorpheusCommand
-import io.github.commandertvis.morpheus.listener.MorpheusListener
+import io.github.commandertvis.morpheus.listener.SleepListener
 import org.bukkit.Bukkit
 import org.bukkit.World
 import org.bukkit.plugin.java.JavaPlugin
@@ -52,7 +52,7 @@ class Morpheus : JavaPlugin() {
    * The method to register plugin's listener
    */
   private fun registerListener() {
-    MorpheusListener
+    SleepListener
   }
 
 }

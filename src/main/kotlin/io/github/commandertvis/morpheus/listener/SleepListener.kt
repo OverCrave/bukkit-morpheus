@@ -2,9 +2,13 @@ package io.github.commandertvis.morpheus.listener
 
 import io.github.commandertvis.morpheus.configuration.Configuration
 import io.github.commandertvis.morpheus.plugin
-import io.github.commandertvis.morpheus.utility.colorize
+import io.github.commandertvis.morpheus.utility.color
 import io.github.commandertvis.morpheus.utility.placeholder
+import io.github.commandertvis.morpheus.utility.sendFormatMessage
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.bukkit.Bukkit
+import org.bukkit.Statistic
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
@@ -15,12 +19,10 @@ import kotlin.math.roundToInt
 /**
  * The common event listener of the plugin
  */
-object MorpheusListener : Listener {
+object SleepListener : Listener {
 
   init {
-    Bukkit
-        .getPluginManager()
-        .registerEvents(MorpheusListener, plugin)
+    Bukkit.getPluginManager().registerEvents(SleepListener, plugin)
   }
 
   /**
@@ -30,40 +32,40 @@ object MorpheusListener : Listener {
   @EventHandler(priority = EventPriority.HIGHEST)
   fun onPlayerBedEnter(event: PlayerBedEnterEvent) {
 
+    val player = event.player
     if (!plugin.toggled) return
 
     plugin.skippingNow = false
     plugin.sleepers++
 
+    player.setStatistic(Statistic.TIME_SINCE_REST, 0)
+
     val ratio: Float = plugin.sleepers.toFloat() / plugin.world.players.size.toFloat()
 
     Bukkit.broadcastMessage(
         Configuration.Messages.wentToBed
-            .colorize()
+            .color()
             .placeholder("player", event.player.name)
             .placeholder(
                 "sleeping",
-                (ratio * 100)
-                    .roundToInt()
-                    .toString()
+                (ratio * 100).roundToInt().toString()
             )
     )
 
     if (ratio >= Configuration.shareOfPlayers) {
       plugin.skippingNow = true
 
-      while (true) {
-        if (plugin.world.time <= 24000) {
+      GlobalScope.launch {
+        while (plugin.world.time > 20) {
           plugin.world.time += 10
-          Thread.sleep(3)
-        } else {
-          plugin.world.time = 0
-          break
+          Thread.sleep(1)
         }
       }
 
       plugin.sleepers = 0
-      Bukkit.broadcastMessage(Configuration.Messages.goodMorning.colorize())
+      Bukkit.broadcastMessage(Configuration.Messages.goodMorning.color())
+      for (i in Bukkit.getOnlinePlayers())
+        i.sendTitle(Configuration.Messages.goodMorning.color(), "", 5, 15, 5)
     }
   }
 
@@ -79,7 +81,7 @@ object MorpheusListener : Listener {
     if (plugin.skippingNow) {
       if (Configuration.setBedSpawn) {
         player.bedSpawnLocation = player.location
-        player.sendMessage(Configuration.Messages.setSpawn.colorize())
+        player.sendFormatMessage(Configuration.Messages.setSpawn)
       }
       return
     }
@@ -88,15 +90,14 @@ object MorpheusListener : Listener {
 
     Bukkit.broadcastMessage(
         Configuration.Messages.leftBed
-            .colorize()
-            .placeholder("player", event.player.name)
+            .color()
+            .placeholder("player", player.name)
             .placeholder(
                 "sleeping",
-                (plugin.sleepers.toFloat() / plugin.world.players.size * 100)
-                    .roundToInt()
-                    .toString()
+                (plugin.sleepers.toFloat() / plugin.world.players.size * 100).roundToInt().toString()
             )
     )
 
   }
+
 }
