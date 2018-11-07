@@ -1,4 +1,5 @@
 set-bed-spawn: true
+inform-with-title: true
 share-of-players: 0.5
 messages:
   set-spawn: "&aBed spawn set"

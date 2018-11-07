@@ -10,13 +10,17 @@ object Configuration {
    */
   val setBedSpawn by Property<Boolean> { "set-bed-spawn" }
   /**
+   * Should plugin inform players about skipping with title
+   */
+  val informWithTitle by Property<Boolean> { "inform-with-title" }
+  /**
    * Share of players in bed
    */
   val shareOfPlayers by Property<Float> { "share-of-players" }
+
   /**
    * Messages section
    */
-
   object Messages {
 
     /**

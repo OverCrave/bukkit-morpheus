@@ -61,8 +61,11 @@ object SleepListener : Listener {
           Thread.sleep(1)
         }
         Bukkit.broadcastMessage(Configuration.Messages.goodMorning.color())
-        for (i in Bukkit.getOnlinePlayers())
-          i.sendTitle(Configuration.Messages.goodMorning.color(), "", 5, 15, 5)
+
+        if (Configuration.informWithTitle) {
+          for (i in Bukkit.getOnlinePlayers())
+            i.sendTitle(Configuration.Messages.goodMorning.color(), "", 5, 15, 5)
+        }
       }
 
       plugin.sleepers = 0

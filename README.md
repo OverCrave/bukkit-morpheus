@@ -4,24 +4,25 @@
 
 # Configuration
 
-* `set-bed-spawn` &mdash; should plugin set bed spawn after clicking by the bed at night. 
-* `share-of-players` &mdash; share of players for skipping night. 
+* `set-bed-spawn:` &mdash; should plugin set bed spawn after clicking by the bed at night. 
+* `inform-with-title:` &mdash; should plugin inform players about skipping with title. 
+* `share-of-players:` &mdash; share of players for skipping night. 
 * `messages: `
-  * `set-spawn` &mdash; this message is showed when player sets his spawnpoint using plugin. 
-  * `no-permission` &mdash; this message is showed when player hasn't permission to access the command. 
-  * `good-morning` &mdash; this message is showed when night is skipped by Morpheus. 
-  * `went-to-bed` &mdash; this message is showed when player goes to bed. 
-  * `left-bed` &mdash; this message is showed when player leaves bed. 
-  * `commands: `
-  * `default` &mdash; this message is showed when player runs /morpheus command with one any unknown argument. 
-  * `enabled` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting on. 
-  * `disabled` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting off. 
-  * `not-enough-args` &mdash; this message is showed when player runs /morpheus command without any arguments. 
+  * `set-spawn:` &mdash; this message is showed when player sets his spawnpoint using plugin. 
+  * `no-permission:` &mdash; this message is showed when player hasn't permission to access the command. 
+  * `good-morning:` &mdash; this message is showed when night is skipped by Morpheus. 
+  * `went-to-bed:` &mdash; this message is showed when player goes to bed. 
+  * `left-bed:` &mdash; this message is showed when player leaves bed. 
+  * `default:` &mdash; this message is showed when player runs /morpheus command with one any unknown argument. 
+  * `enabled:` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting on. 
+  * `disabled:` &mdash; this message is showed when player runs /morpheus toggle command and turns sleep voting off. 
+  * `not-enough-args:` &mdash; this message is showed when player runs /morpheus command without any arguments. 
 
 Default `config.yml`: 
 
 ```yaml
 set-bed-spawn: true
+inform-with-title: true
 share-of-players: 0.5
 messages:
   set-spawn: "&aBed spawn set"
