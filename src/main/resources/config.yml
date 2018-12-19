@@ -1,6 +1,21 @@
+############
+# MORPHEUS #
+############
+
+# should we set the players bed spawn when he rightclicks his bed?
 set-bed-spawn: true
+
+# should we inform players about night skipping through titles?
 inform-with-title: true
+
+# the percentage of players that have to sleep for the night to be skipped.
 share-of-players: 0.5
+
+# some messages you may modify however you want!
+# placeholders:
+# %player% - the name of the player
+# %sleeping% - the percentage of players currently sleeping
+# %version% - this plugins current version
 messages:
   set-spawn: "&aBed spawn set"
   no-permission: "&4No permission"
