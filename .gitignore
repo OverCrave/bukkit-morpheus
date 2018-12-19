@@ -6,3 +6,7 @@
 /gradlew
 /gradlew.bat
 /run/
+/bin/
+.classpath
+.settings/org.eclipse.buildship.core.prefs
+.project
