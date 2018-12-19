@@ -32,7 +32,7 @@ public class SleepListener implements Listener
 		
 		Bukkit.broadcastMessage(Morpheus.customConfig.getString("messages.wentToBed"));
 		
-		if(ratio >= Morpheus.customConfig.getDouble("shareOfPlayers"))
+		if(ratio >= (Morpheus.customConfig.getDouble("shareOfPlayers")) / 100)
 		{
 			Morpheus.skippingNow = true;
 			
