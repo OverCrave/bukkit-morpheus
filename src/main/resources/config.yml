@@ -11,6 +11,10 @@ set-bed-spawn: true
 # should we inform players about night skipping through titles?
 inform-with-title: true
 
+# what worlds do you want the plugin to work in?
+enabled-worlds:
+  - world
+
 # the percentage of players that have to sleep for the night to be skipped.
 share-of-players: 50.0
 
