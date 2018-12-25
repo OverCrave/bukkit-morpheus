@@ -26,7 +26,7 @@ public class MorpheusCommand implements CommandExecutor, TabCompleter
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) 
 	{
-		if(!sender.hasPermission("morpheus.control"))
+		if(!sender.hasPermission("morpheus.toggle"))
 		{
 			sender.sendMessage(Morpheus.customConfig.getString("messages.no-permission"));
 			return true;

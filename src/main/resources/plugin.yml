@@ -1,21 +1,18 @@
-name: Morpheus
-description: 'Morpheus allows to skip night when needed percentage of players sleep. Inspired by Forge self-titled mod.'
-version: 0.6-SNAPSHOT
-load: POSTWORLD
-authors: [CMDR_Tvis, Mdash, OverCrave]
-website: commandertvis.github.io
 main: net.overcrave.morpheus.main.Morpheus
-prefix: Morpheus
-database: false
+name: Morpheus
+version: 0.6-SNAPSHOT
+api-version: 1.13
+description: 'Morpheus allows to skip the night if the specified percentage of players are asleep.'
+author: OverCrave
+authors: [Mdash, CMDR_Tvis]
 commands:
   morpheus:
     description: '/morpheus toggle — toggle the plugin'
-    permission: morpheus
+    permission: morpheus.toggle
 permission:
-  morpheus.control:
+  morpheus.toggle:
     default: op
   morpheus.*:
     default: op
     children:
       morpheus.control: true
-api-version: 1.13
