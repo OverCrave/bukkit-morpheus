@@ -2,6 +2,9 @@
 # MORPHEUS #
 ############
 
+# should we let players skip the day aswell?
+enable-skip-day: false
+
 # should we set the players bed spawn when he rightclicks his bed?
 set-bed-spawn: true
 
