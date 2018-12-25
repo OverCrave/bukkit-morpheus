@@ -28,17 +28,17 @@ public class MorpheusCommand implements CommandExecutor, TabCompleter
 	{
 		if(!sender.hasPermission("morpheus.toggle"))
 		{
-			sender.sendMessage(Morpheus.customConfig.getString("messages.no-permission"));
+			sender.sendMessage(Morpheus.config.getString("messages.no-permission"));
 			return true;
 		}
 		else if(args.length > 0 && args[0].toLowerCase() == "toggle")
 		{
-			Morpheus.toggled = !Morpheus.toggled;
+			Morpheus.enabled = !Morpheus.enabled;
 			return true;
 		}
 		else
 		{
-			sender.sendMessage(Morpheus.customConfig.getString("messages.default"));
+			sender.sendMessage(Morpheus.config.getString("messages.default"));
 			return false;
 		}
 	}

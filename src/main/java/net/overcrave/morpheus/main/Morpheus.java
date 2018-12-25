@@ -13,51 +13,58 @@ import net.overcrave.morpheus.listener.SleepListener;
 
 public class Morpheus extends JavaPlugin 
 {
-	public static boolean toggled = true;
-	public static boolean skippingNow = false;
+	public static boolean enabled;
+	public static boolean skipping;
 	public static int sleepers = 0;
 	
-	private File customConfigFile;
-	public static FileConfiguration customConfig;
+	private File configFile;
+	public static FileConfiguration config;
 	public static World world;
+	
+	@Override
+	public void onLoad() 
+	{
+		enabled = true;
+	    loadConfig();
+	    regCmds();
+	}
 	
 	@Override
 	public void onEnable() 
 	{
 	    world = Bukkit.getWorlds().get(0);
-	    createConfigFile();
-	    registerCommand();
-	    registerListener();
-	  }
-
-	  private void createConfigFile() 
-	  {
-	        customConfigFile = new File(getDataFolder(), "config.yml");
-	        if (!customConfigFile.exists()) {
-	            customConfigFile.getParentFile().mkdirs();
-	            saveResource("config.yml", false);
-	         }
-
-	        customConfig = new YamlConfiguration();
-	        
-	        try 
-	        {
-	            customConfig.load(customConfigFile);
-	        } 
-	        
-	        catch (IOException | InvalidConfigurationException e) 
-	        {
-	            e.printStackTrace();
-	        }
+	    regLrs();
 	}
 
-	private void registerCommand() 
-	  {
-	    getCommand("morpheus").setExecutor(new MorpheusCommand());
-	  }
+	private void loadConfig() 
+	{
+        configFile = new File(getDataFolder(), "config.yml");
+        
+        if (!configFile.exists()) 
+        {
+	        configFile.getParentFile().mkdirs();
+	        saveResource("config.yml", false);
+	    }
 
-	  private void registerListener() 
-	  {
+	    config = new YamlConfiguration();
+	        
+	    try 
+	    {
+	        config.load(configFile);
+	    } 
+	    catch (IOException | InvalidConfigurationException e) 
+	    {
+	        e.printStackTrace();
+	    }
+	}
+
+	private void regCmds() 
+	{
+	    getCommand("morpheus").setExecutor(new MorpheusCommand());
+	}
+
+	private void regLrs() 
+	{
 	    getServer().getPluginManager().registerEvents(new SleepListener(), this);
-	  }
+	}
 }

@@ -18,36 +18,36 @@ public class SleepListener implements Listener
 	{
 		Player player = event.getPlayer();
 		
-		if(!Morpheus.toggled)
+		if(!Morpheus.enabled)
 		{
 			return;
 		}
 		
-		Morpheus.skippingNow = false;
+		Morpheus.skipping = false;
 		Morpheus.sleepers++;
 		
 		player.setStatistic(Statistic.TIME_SINCE_REST, 0);
 		
 		float ratio = Morpheus.sleepers / Morpheus.world.getPlayers().size();
 		
-		Bukkit.broadcastMessage(Morpheus.customConfig.getString("messages.wentToBed"));
+		Bukkit.broadcastMessage(Morpheus.config.getString("messages.wentToBed"));
 		
-		if(ratio >= (Morpheus.customConfig.getDouble("shareOfPlayers")) / 100)
+		if(ratio >= (Morpheus.config.getDouble("shareOfPlayers")) / 100)
 		{
-			Morpheus.skippingNow = true;
+			Morpheus.skipping = true;
 			
 			while(Morpheus.world.getTime() > 20)
 			{
 				Morpheus.world.setTime(Morpheus.world.getTime() + 10);
 			}
 			
-			Bukkit.broadcastMessage(Morpheus.customConfig.getString("messages.goodMorning"));
+			Bukkit.broadcastMessage(Morpheus.config.getString("messages.goodMorning"));
 			
-			if(Morpheus.customConfig.getBoolean("informWithTitle"))
+			if(Morpheus.config.getBoolean("informWithTitle"))
 			{
 				for(Player p : Bukkit.getOnlinePlayers())
 				{
-					p.sendTitle(Morpheus.customConfig.getString("messages.goodMorning"), "", 5, 15, 5);
+					p.sendTitle(Morpheus.config.getString("messages.goodMorning"), "", 5, 15, 5);
 				}
 			}
 		}
@@ -60,17 +60,17 @@ public class SleepListener implements Listener
 	{
 		Player player = event.getPlayer();
 		
-		if(!Morpheus.toggled)
+		if(!Morpheus.enabled)
 		{
 			return;
 		}
 		
-		if(Morpheus.skippingNow)
+		if(Morpheus.skipping)
 		{
-			if(Morpheus.customConfig.getBoolean("setBedSpawn"))
+			if(Morpheus.config.getBoolean("setBedSpawn"))
 			{
 				player.setBedSpawnLocation(player.getLocation());
-				player.sendMessage(Morpheus.customConfig.getString("messages.setSpawn"));
+				player.sendMessage(Morpheus.config.getString("messages.setSpawn"));
 			}
 			
 			return;
@@ -78,6 +78,6 @@ public class SleepListener implements Listener
 		
 		Morpheus.sleepers--;
 		
-		Bukkit.broadcastMessage(Morpheus.customConfig.getString("messages.leftBed"));
+		Bukkit.broadcastMessage(Morpheus.config.getString("messages.leftBed"));
 	}
 }
