@@ -2,6 +2,7 @@ package net.overcrave.morpheus.listener;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Statistic;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -13,22 +14,33 @@ import net.overcrave.morpheus.main.Morpheus;
 
 public class SleepListener implements Listener 
 {
+	private static World world;
+	
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerBedEnter(PlayerBedEnterEvent event)
 	{
-		Player player = event.getPlayer();
-		
 		if(!Morpheus.enabled)
 		{
 			return;
 		}
 		
-		Morpheus.skipping = false;
-		Morpheus.sleepers++;
+		for(World w : Morpheus.worlds)
+		{
+			if(w.getName() == event.getBed().getLocation().getWorld().getName())
+			{
+				world = w;
+			}
+		}
 		
+		int worldIndex = Morpheus.worlds.indexOf(world);
+		Morpheus.sleepers.set(worldIndex, Morpheus.sleepers.get(worldIndex) + 1);
+		
+		Morpheus.skipping = false;
+		
+		Player player = event.getPlayer();
 		player.setStatistic(Statistic.TIME_SINCE_REST, 0);
 		
-		float ratio = Morpheus.sleepers / Morpheus.world.getPlayers().size();
+		float ratio = Morpheus.sleepers.get(worldIndex) / world.getPlayers().size();
 		
 		Bukkit.broadcastMessage(Morpheus.config.getString("messages.wentToBed"));
 		
@@ -36,9 +48,9 @@ public class SleepListener implements Listener
 		{
 			Morpheus.skipping = true;
 			
-			while(Morpheus.world.getTime() > 20)
+			while(world.getTime() > 20)
 			{
-				Morpheus.world.setTime(Morpheus.world.getTime() + 10);
+				world.setTime(world.getTime() + 10);
 			}
 			
 			Bukkit.broadcastMessage(Morpheus.config.getString("messages.goodMorning"));
@@ -51,8 +63,8 @@ public class SleepListener implements Listener
 				}
 			}
 		}
-		
-		Morpheus.sleepers = 0;
+
+		Morpheus.sleepers.set(worldIndex, 0);
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -75,8 +87,17 @@ public class SleepListener implements Listener
 			
 			return;
 		}
+
+		for(World w : Morpheus.worlds)
+		{
+			if(w.getName() == event.getBed().getLocation().getWorld().getName())
+			{
+				world = w;
+			}
+		}
 		
-		Morpheus.sleepers--;
+		int worldIndex = Morpheus.worlds.indexOf(world);
+		Morpheus.sleepers.set(worldIndex, Morpheus.sleepers.get(worldIndex) - 1);
 		
 		Bukkit.broadcastMessage(Morpheus.config.getString("messages.leftBed"));
 	}
